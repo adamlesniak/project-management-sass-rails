@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 # Use milia for multi tenancy
 gem 'milia'
+# Use bootstrap for basic styling
+gem 'twitter-bootstrap-rails'
+# Use basic bootstrap styling for devise
+gem 'devise-bootstrap-views'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
