@@ -22,6 +22,8 @@ gem 'milia'
 gem 'twitter-bootstrap-rails'
 # Use basic bootstrap styling for devise
 gem 'devise-bootstrap-views'
+# Use bootstrap datepicker gem for Projects form
+gem 'bootstrap-datepicker-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
