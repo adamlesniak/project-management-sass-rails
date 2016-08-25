@@ -24,6 +24,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 # Use bootstrap datepicker gem for Projects form
 gem 'bootstrap-datepicker-rails'
+# Use AWS SDK to handle API calls - artifact upload
+gem 'aws-sdk'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
