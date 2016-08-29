@@ -29,7 +29,8 @@ class ArtifactsController < ApplicationController
 
     respond_to do |format|
       if @artifact.save
-        format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @artifact.project_id), notice: 'Artifact was successfully created.' }
+        format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, 
+                id: @artifact.project_id), notice: 'Artifact was successfully created.' }
       else
         format.html { render :new }
       end
@@ -41,7 +42,7 @@ class ArtifactsController < ApplicationController
   def update
     respond_to do |format|
       if @artifact.update(artifact_params)
-        format.html { redirect_to tenant_project_url(tenant_id: Tenant.current_tenant_id, id: @artifact.project_id), notice: 'Artifact was successfully updated.' }
+        format.html { redirect_to @artifact, notice: 'Artifact was successfully updated.' }
       else
         format.html { render :edit }
       end
