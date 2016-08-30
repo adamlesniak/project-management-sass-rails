@@ -26,6 +26,8 @@ gem 'devise-bootstrap-views'
 gem 'bootstrap-datepicker-rails'
 # Use AWS SDK to handle API calls - artifact upload
 gem 'aws-sdk'
+# Use Stripe for handling payments
+gem 'stripe'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
