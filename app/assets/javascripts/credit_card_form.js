@@ -2,11 +2,9 @@
 function GetURLParameter(sParam) {
   var sPageURL = window.location.search.substring(1);
   var sURLVariables = sPageURL.split('&');
-  for (var i = 0; i < sURLVariables.length; i++)
-  {
+  for (var i = 0; i < sURLVariables.length; i++) {
     var sParameterName = sURLVariables[i].split('=');
-    if (sParameterName[0] == sParam)
-    {
+    if (sParameterName[0] == sParam) {
         return sParameterName[1];
     }
   }
@@ -39,7 +37,8 @@ $(document).ready(function() {
   var handlePlanChange = function(plan_type, form) {
     var $form = $(form);
     
-    if(!plan_type == undefined) plan_type = $('#tenant_plan :selected').val();
+    if(!plan_type) 
+      plan_type = $('#tenant_plan :selected').val();
     
     
     if( plan_type === 'premium') {
@@ -68,17 +67,13 @@ $(document).ready(function() {
 
     $form = $('.cc_form');
     if (response.error) {
-        show_error(response.error.message);
-        $form.find("input[type=submit]").prop("disabled", false);
+      show_error(response.error.message);
+      $form.find("input[type=submit]").prop("disabled", false);
     } else {
-        token = response.id;
-        $form.append($("<input type=\"hidden\" name=\"payment[token]\" />").val(token));
-        $("[data-stripe=number]").remove();
-        $("[data-stripe=cvv]").remove();
-        $("[data-stripe=exp-year]").remove();
-        $("[data-stripe=exp-month]").remove();
-        $("[data-stripe=label]").remove();
-        $form.get(0).submit();
+      token = response.id;
+      $form.append($("<input type=\"hidden\" name=\"payment[token]\" />").val(token));
+      $("[data-stripe]").remove();
+      $form.get(0).submit();
     }
 
     return false;
