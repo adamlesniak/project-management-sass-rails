@@ -27,7 +27,6 @@ class RegistrationsController < Milia::RegistrationsController
   
       Tenant.transaction  do 
         @tenant = Tenant.create_new_tenant( tenant_params, user_params, coupon_params)
-        byebug
         if @tenant.errors.empty?   # tenant created
           if @tenant.plan == 'premium'
             @payment = Payment.new({ 
