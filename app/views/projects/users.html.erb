@@ -9,11 +9,11 @@
       <th><%=t '.actions', :default => t("helper.actions") %></th>
     </tr>
     <tbody>
-      <% @project.users each do |user| %>
+      <% @project_users.each do |user| %>
         <tr>
           <td><%= user.email %></td>
           <td>
-            <%= if !user.is_admin? %>
+            <% if !user.is_admin? %>
             <%= link_to "Remove", user_project_path(user.user_projects.find_by(project_id: @project.id),
                                   tenant_id: @project.tenant_id),
                                   :method => :delete,
